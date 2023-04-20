@@ -15,10 +15,10 @@ const AgencyLogos = () =>{
 
     return (
          <div id="agency" className="flex flex-wrap justify-center">
-          <Image src={interpol} className="h-20 w-20"   alt="interpol logo" />
-          <Image src={fbi} className=" h-20 w-20"  alt="interpol logo" />
-          <Image src={pnp}  className=" h-20 w-20" alt="interpol logo" />
-          <Image src={nbi}  className=" h-20 w-20" alt="interpol logo" />
+          <Image src={interpol} className="h-20 w-20 mt-5"   alt="interpol logo" />
+          <Image src={fbi} className=" h-20 w-20 mt-5"  alt="interpol logo" />
+          <Image src={pnp}  className=" h-20 w-20 mt-5" alt="interpol logo" />
+          <Image src={nbi}  className=" h-20 w-20 mt-5" alt="interpol logo" />
 
       </div>
     )

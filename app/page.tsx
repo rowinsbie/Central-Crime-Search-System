@@ -9,7 +9,7 @@ export default function Home() {
     <div className="bg-white	">
       {/* `<AgencyLogos />` is rendering the `AgencyLogos` component, which is a custom component that
 displays logos of different law enforcement agencies. */}
-      <div className="px-10 py-10 ">
+      <div className="px-20 py-10 ">
           <AgencyLogos />
       </div>
 
