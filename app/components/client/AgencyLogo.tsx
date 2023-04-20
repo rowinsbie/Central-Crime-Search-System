@@ -6,20 +6,13 @@ Description: This component will render the logo of all the agency
 */
 
 import Image from "next/image";
-import interpol from "../../images/interpol.png";
-import fbi from "../../images/fbi.png";
-import pnp from "../../images/pnp.png";
-import nbi from "../../images/nbi.png";
+import agency from "../../images/agency.png";
 
 const AgencyLogos = () =>{
 
     return (
          <div id="agency" className="flex flex-wrap justify-center">
-          <Image src={interpol} className="h-20 w-20 mt-5"   alt="interpol logo" />
-          <Image src={fbi} className=" h-20 w-20 mt-5"  alt="interpol logo" />
-          <Image src={pnp}  className=" h-20 w-20 mt-5" alt="interpol logo" />
-          <Image src={nbi}  className=" h-20 w-20 mt-5" alt="interpol logo" />
-
+          <Image src={agency} className="h-100 w-100 mt-5"   alt="interpol logo" />
       </div>
     )
 }

@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import SearchBar from './components/client/SearchBar'
 import AgencyLogos from './components/client/AgencyLogo'
-const inter = Inter({ subsets: ['latin'] })
+
 export default function Home() {
   return (
-    <main className="mx-auto container-fluid">
+    <main className="relative container p-6 mx-auto container-fluid">
     <div className="bg-white	">
       {/* `<AgencyLogos />` is rendering the `AgencyLogos` component, which is a custom component that
 displays logos of different law enforcement agencies. */}
