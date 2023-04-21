@@ -26,11 +26,11 @@ So I thought, What if we have a system like that, accessible publicly where peop
 ### Installation
 1. Clone the repo
 ```sh
-git clone repository.git
+git clone https://github.com/rowinsbie/person-integrity-check-ph.git
 ```
 2. Navigate to the project folder
 ```sh
-cd project-folder/
+cd project-folder-name/
 ```
 3. run this command on the terminal
 ``` sh
