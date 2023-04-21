@@ -1,12 +1,12 @@
 # Person Integrity Check PH
 ### Status: Under development
-<p>See below the screenshot and short clip of the initial design and functionality.</p>
+<!-- <p>See below the screenshot and short clip of the initial design and functionality.</p> -->
 
 <img src="docs/img/screenshot.png" width="100%" />
-<video width="100%" height="240" controls>
+<!-- <video width="100%" height="240" controls>
   <source src="docs/videos/video.mp4" type="video/mp4">
-</video>
-In this clip, It only consumes the API of interpol, still working on other agencies.
+</video> -->
+<!-- In this clip, It only consumes the API of interpol, still working on other agencies. -->
 
 ## About 
 <b>Person Integrity Check PH</b> is a web application that consumes API from law enforcement agencies such as Interpol and the FBI. In the Initial plan, it was also supposed to get data from PNP and NBI. But unfortunately, there are no available APIs from the two agencies.
@@ -44,5 +44,5 @@ npm run dev
 </code></li>
 </ul> 
 
-## License
+
 
