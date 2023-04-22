@@ -1,9 +1,9 @@
 "use client";
-import useSearchStore from "@/state/Search";
+import useInterpolStore from "@/state/SearchStore";
 
 const MatrixResult = () => {
-    const total = useSearchStore((state) => state.totalResult);
-    const query = useSearchStore((state) => state.query);
+    const total = useInterpolStore((state) => state.totalResult);
+    const query = useInterpolStore((state) => state.query);
     return (
         <>
             <div className="flex justify-between border px-5 py-5 bg-slate-200		 mb-10 rounded-full ">
