@@ -31,7 +31,6 @@ const useSearchStore = create<Search>()((set) => ({
         set({totalResult:(await interpol).totalResult});
 
         let fbi = FBISearch(keyword);
-        console.log(fbi);
 
     }
     
@@ -49,12 +48,8 @@ const InterpolSearch = async(keyword:String) => {
 const FBISearch = async(keyword:String) => {
     const res = await axios.get(`https://api.fbi.gov/@wanted?pageSize=20&page=1&sort_on=modified&sort_order=desc&title=${keyword}`);
     const data = await res.data;
-    if(data.item) {
-        return  {
-            title:data.item.title,
-            sex:data.item.sex
-        }
-    }
+    console.log(data);
+    return data;
 }
 
 export default useSearchStore;

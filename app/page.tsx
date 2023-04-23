@@ -4,7 +4,7 @@ import AgencyLogos from './components/client/AgencyLogo'
 
 export default function Home() {
   return (
-    <main className="relative container p-6 mx-auto container-fluid">
+    <main className="relative container p-6 mx-auto container">
     <div className="bg-white	">
       {/* `<AgencyLogos />` is rendering the `AgencyLogos` component, which is a custom component that
 displays logos of different law enforcement agencies. */}
