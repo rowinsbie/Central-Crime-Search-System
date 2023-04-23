@@ -5,11 +5,14 @@ import MatrixResult from "./result/MatrixResult";
 import useFilterStore from "@/state/FilterStore";
 
 import Interpol from "./result/InterpolResult";
-
+import FBIResult from "./result/FBIResult";
 const SearchBar = () => {
   const [keyword, setKeyword] = useState("");
   const setResult = useSearchStore((state) => state.setResult);
   const showInterpol = useFilterStore((state) => state.showInterpol);
+  const showFBI = useFilterStore((state) => state.showFBI);
+
+
 
   const onChange = (e: any) => {
     setKeyword(e.target.value);
@@ -36,6 +39,8 @@ const SearchBar = () => {
       <div className="container mx-auto  sm:px-3 sm:py-3">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 sm:grid-cols-1">
           {showInterpol ? <Interpol /> : ""}
+          {showFBI ? <FBIResult /> : ""}
+          
         </div>
       </div>
     </>

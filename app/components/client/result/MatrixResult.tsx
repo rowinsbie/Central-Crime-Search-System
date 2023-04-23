@@ -3,6 +3,8 @@ import useInterpolStore from "@/state/SearchStore";
 import useFilterStore from "@/state/FilterStore";
 const MatrixResult = () => {
     const total = useInterpolStore((state) => state.totalResult);
+    const fbiTotal = useInterpolStore((state) => state.totalFBI);
+
     const query = useInterpolStore((state) => state.query);
     const updateFilter = useFilterStore((state) => state.updateFilter);
 
@@ -20,7 +22,7 @@ const MatrixResult = () => {
                 </div>
                 <div>
                     <span>FBI: </span>
-                    <span onClick={(e) => updateFilter("FBI",e)} className="cursor-pointer	hover:bg-green-400 inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-green-600 rounded-full">0</span>
+                    <span onClick={(e) => updateFilter("FBI",e)} className="cursor-pointer	hover:bg-green-400 inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-green-600 rounded-full">{fbiTotal}</span>
 
                 </div>
                 <div>

@@ -11,7 +11,7 @@ interface IFilterResult extends IFilter {
 
 
 const useFilterStore = create<IFilterResult>()((set,state) => ({
-    showInterpol:true,
+    showInterpol:false,
     showFBI:false,
     updateFilter: (agency:String,e:any) => {
         e.preventDefault();

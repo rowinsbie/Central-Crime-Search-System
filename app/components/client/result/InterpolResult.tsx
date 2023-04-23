@@ -21,7 +21,7 @@ const Interpol = () => {
                 alt="interpol logo"
               />
                <div className="mt-4">
-              <h1 className="">Name: <span className="lg:text-2xl md:text-xs font-bold">{result.name}</span></h1>
+              <h1 className="">Name: <span className="lg:text-sm md:text-xs font-bold">{result.name}</span></h1>
               <h6>Foreign Name: {result.forename}</h6>
             </div>
             </div>
