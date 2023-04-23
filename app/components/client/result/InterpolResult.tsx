@@ -9,7 +9,7 @@ const Interpol = () => {
     return (
       <>
         {result.map((result: any, index: any) => (
-          <div key={index} className="border px-10 p-10 w-full  ">
+          <div key={index} className="border px-10 p-10 w-full h-full ">
             <div className="">
               <Image
                 src={
@@ -22,13 +22,12 @@ const Interpol = () => {
               />
                <div className="mt-4">
               <h1 className="">Name: <span className="lg:text-sm md:text-xs font-bold">{result.name}</span></h1>
-              <h6>Foreign Name: {result.forename}</h6>
             </div>
             </div>
 
            
             <hr />
-            <div className="action flex justify-between mt-10">
+            <div className=" flex content-end   justify-between mt-20">
               <Image
                 src={InterpolLogo}
                 alt="Interpol logo"

@@ -37,7 +37,6 @@ const useSearchStore = create<Search>()((set) => ({
         set({results:(await interpol).results});
         set({query:keyword});
         set({totalResult:(await interpol).totalResult});
-
         let fbi = await FBISearch(keyword);
         console.log(fbi);
         set({FbiResults:fbi.items})
@@ -50,6 +49,7 @@ const useSearchStore = create<Search>()((set) => ({
 const InterpolSearch = async(keyword:String) => {
     const res = await axios.get(`https://ws-public.interpol.int/notices/v1/red?name=${keyword}`)
     const data = await res.data;
+    console.log(data);  
     return {
         results:data._embedded.notices,
         totalResult:data.total
