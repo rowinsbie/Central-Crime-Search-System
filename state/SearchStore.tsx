@@ -8,11 +8,13 @@ interface IInterpol  {
         results: Array<Object>,
         query:String,
         totalResult:number,
+        InterpolCurrentPage:number
 }
 
 interface IFBI {
     FbiResults: Array<Object>,
-    totalFBI:number
+    totalFBI:number,
+    FBICurrentPage:number
 }
 
 interface Search extends IInterpol, IFBI {
@@ -26,10 +28,12 @@ const useSearchStore = create<Search>()((set) => ({
     results:[],
     totalResult:0,
     query:"",
+    InterpolCurrentPage:1,
 
     // fbi results
     FbiResults:[],
     totalFBI:0,
+    FBICurrentPage:1,
  
     setResult: async(keyword: String,e:any) => {
         e.preventDefault();
@@ -52,12 +56,13 @@ const InterpolSearch = async(keyword:String) => {
     console.log(data);  
     return {
         results:data._embedded.notices,
-        totalResult:data.total
+        totalResult:data.total,
+        currentPage:data.query.page
     }
 }
 
 const FBISearch = async(keyword:String) => {
-    const res = await axios.get(`https://api.fbi.gov/@wanted?pageSize=20&page=1&sort_on=modified&sort_order=desc&title=${keyword}`);
+    const res = await axios.get(`https://api.fbi.gov/@wanted?title=${keyword}`);
     const data = await res.data;
     return await data;
 }

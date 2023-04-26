@@ -3,8 +3,12 @@ import useSearchStore from "@/state/SearchStore";
 import Image from "next/image";
 import Link from "next/link";
 import InterpolLogo from "../../../images/interpol.png";
+import Pagination from "../Pagination";
 const Interpol = () => {
   const result = useSearchStore((state) => state.results);
+  const total = useSearchStore((state) => state.totalResult);
+  const currentPage = useSearchStore((state) => state.InterpolCurrentPage);
+  const pageSize = 20;
   if (result.length >= 1) {
     return (
       <>
@@ -41,6 +45,11 @@ const Interpol = () => {
           </div>
        
         ))}
+        <Pagination
+            itemLength={result.length}
+            currentPage={currentPage}
+            pageSize={pageSize}
+        />
       </>
     );
   } else {
