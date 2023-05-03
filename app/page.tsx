@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import SearchBar from './components/client/SearchBar'
 import AgencyLogos from './components/client/AgencyLogo'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 export default function Home() {
   return (
@@ -17,7 +19,10 @@ displays logos of different law enforcement agencies. */}
 search bar form. */}
         <h2>Crime Check PH</h2>
         <hr />
+        <Suspense fallback={<Loading />}>
         <SearchBar />
+        </Suspense>
+
       </div>
     </div>
     <hr className="" />

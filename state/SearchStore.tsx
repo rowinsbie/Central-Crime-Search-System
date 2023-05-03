@@ -17,12 +17,15 @@ interface IFBI {
 }
 
 interface Search extends IInterpol, IFBI {
+    isLoading:Boolean
     query:String,
     setResult:(keyword:String,e:any) => void ,
     changePage : (page:number,category:String) => void
 }
 
 const useSearchStore = create<Search>()((set) => ({
+    
+    isLoading:false,
     
     // Interpol data
     results:[],
@@ -37,8 +40,9 @@ const useSearchStore = create<Search>()((set) => ({
  
     setResult: async(keyword: String,e:any) => {
         e.preventDefault();
+        set({isLoading:true});
         let state = useSearchStore.getState();
-        let interpol = InterpolSearch(keyword,state.InterpolCurrentPage);
+        let interpol = await InterpolSearch(keyword,state.InterpolCurrentPage);
         set({results:(await interpol).results});
         set({query:keyword});
         set({totalResult:(await interpol).totalResult});
@@ -46,6 +50,11 @@ const useSearchStore = create<Search>()((set) => ({
         let fbi = await FBISearch(keyword,state.FBICurrentPage);
         set({FbiResults:fbi.items})
         set({totalFBI:fbi.total})
+
+        if(interpol && fbi) {
+            set({isLoading:false});
+
+        }
     },
    
     changePage : async(page:number,category:String) => {
@@ -55,14 +64,15 @@ const useSearchStore = create<Search>()((set) => ({
                 let interpol = useSearchStore.getState().InterpolCurrentPage;
                 let newPage = interpol;
                 if(interpol < page) {
-                    newPage++;
+                    newPage = page;
                 } else {
-                    newPage--;
+                    newPage = page;
                 }
                 let newResult = InterpolSearch(query,newPage);
                 set({InterpolCurrentPage:newPage});
                 set({results:(await newResult).results});
                 set({totalResult:(await newResult).totalResult});
+                break;
 
         }
 
