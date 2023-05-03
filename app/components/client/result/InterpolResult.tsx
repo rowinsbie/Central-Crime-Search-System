@@ -8,7 +8,7 @@ const Interpol = () => {
   const result = useSearchStore((state) => state.results);
   const total = useSearchStore((state) => state.totalResult);
   const currentPage = useSearchStore((state) => state.InterpolCurrentPage);
-  const pageSize = 20;
+  const pageSize = 10;
   if (result.length >= 1) {
     return (
       <>
@@ -46,9 +46,10 @@ const Interpol = () => {
        
         ))}
         <Pagination
-            itemLength={result.length}
+            total={total}
             currentPage={currentPage}
             pageSize={pageSize}
+            category="interpol"
         />
       </>
     );
