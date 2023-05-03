@@ -44,7 +44,6 @@ const useSearchStore = create<Search>()((set) => ({
         set({totalResult:(await interpol).totalResult});
 
         let fbi = await FBISearch(keyword,state.FBICurrentPage);
-        console.log(fbi);
         set({FbiResults:fbi.items})
         set({totalFBI:fbi.total})
     },
