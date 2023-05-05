@@ -78,7 +78,7 @@ const SearchBar = () => {
           {isLoading ? (
             <LoadingScreen />
           ) : (
-             (showInterpol ? <Interpol /> : null)
+             (showInterpol ? <Interpol /> : showFBI ? <FBIResult /> : '')
             //  (showFBI ? <FBIResult /> : null)
           )}
       </div>
