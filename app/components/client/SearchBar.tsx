@@ -3,6 +3,7 @@ import useSearchStore from "@/state/SearchStore";
 import { useState } from "react";
 import MatrixResult from "./result/MatrixResult";
 import useFilterStore from "@/state/FilterStore";
+import AgencyLogos from "../client/AgencyLogo";
 
 import LoadingScreen from "./LoadingScreen";
 import Interpol from "./result/InterpolResult";
@@ -18,10 +19,14 @@ const SearchBar = () => {
   const onChange = (e: any) => {
     setKeyword(e.target.value);
   };
-  if (!isLoading) {
-    return (
-      <>
-        <form>
+  return (
+    <>
+      <div className="fixed mx-auto right-0 top-0 left-0  px-20  bg-slate-900 ">
+        <div className="py-5">
+          <AgencyLogos />
+        </div>
+
+        <form className="relative ">
           <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
             Search
           </label>
@@ -36,9 +41,9 @@ const SearchBar = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 ></path>
               </svg>
@@ -48,33 +53,38 @@ const SearchBar = () => {
               value={keyword}
               type="search"
               id="default-search"
-              className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50   dark:placeholder-gray-400 "
+              className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-s-sm bg-gray-50   dark:placeholder-gray-400 "
               placeholder="Search by name"
               required
             />
             <button
               onClick={(e) => setResult(keyword, e)}
               type="submit"
-              className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white absolute right-2.5 bottom-2.5 bg-slate-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 "
             >
               Search
             </button>
           </div>
         </form>
         <MatrixResult />
-            {showInterpol ? <Interpol /> : ""}
-            {showFBI ? <FBIResult /> : ""}
-      </>
-    );
-  } else {
-    return (
-      <div className="container mx-auto  sm:px-3 sm:py-3">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 sm:grid-cols-1">
-          <LoadingScreen />
-        </div>
       </div>
-    );
-  }
+
+      <div className="py-20">
+          {/* {(isLoading) ? <LoadingScreen /> : (() => {
+              {showInterpol ? <Interpol /> : ""}
+              {showFBI ? <FBIResult /> : ""}
+          }) (
+          )} */}
+          {isLoading ? (
+            <LoadingScreen />
+          ) : (
+             (showInterpol ? <Interpol /> : null)
+            //  (showFBI ? <FBIResult /> : null)
+          )}
+      </div>
+
+    </>
+  );
 };
 
 export default SearchBar;

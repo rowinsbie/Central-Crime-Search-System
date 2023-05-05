@@ -77,31 +77,48 @@ const Interpol = () => {
               );
             })}
           </div>
-        </div>
-            
-        <Pagination
+          <Pagination
           total={total}
           currentPage={currentPage}
           pageSize={pageSize}
           category="interpol"
         />
+        </div>
+
+       
       </>
     );
   } else {
     return (
-      <>
-        <div className="grid grid-cols-1 px-10 py-10 w-full border  ">
-          <Image
+      <div
+      id="projects"
+      className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12  mt-44 mx-auto text-center px-4 md:px-4"
+    >
+      <div className="flex justify-center">
+      <Image
             alt="interpol logo"
             className="p-3"
             width={200}
             height={200}
             src={InterpolLogo}
           />
-          <hr />
-          <h1 className="h1">No Records found</h1>
-        </div>
-      </>
+      </div>
+      <p>No result from the Interpol</p>
+
+      </div>
+
+        // <div className="grid grid-cols-1 px-10 py-10 w-full border  ">
+        //   <Image
+        //     alt="interpol logo"
+        //     className="p-3"
+        //     width={200}
+        //     height={200}
+        //     src={InterpolLogo}
+        //   />
+        //   <hr />
+        //   <h1 className="h1">No Records found</h1>
+        // </div>
+    
     );
   }
 };

@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import axios from "axios";
-
+import useFilterStore from './FilterStore';
 
 
 interface IInterpol  {
@@ -41,6 +41,7 @@ const useSearchStore = create<Search>()((set) => ({
     setResult: async(keyword: String,e:any) => {
         e.preventDefault();
         set({isLoading:true});
+        let FilterStore = useFilterStore.setState({showInterpol:true});
         let state = useSearchStore.getState();
         let interpol = await InterpolSearch(keyword,state.InterpolCurrentPage);
         set({results:(await interpol).results});

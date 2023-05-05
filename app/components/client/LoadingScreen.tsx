@@ -1,13 +1,15 @@
 const LoadingScreen = () => {
-  const number = 10;
+  const number = 8;
   return (
-    <div>
+    <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12  py-28 mx-auto px-4 md:px-4">
+                <div className="flex  flex-wrap  items-stretch -mx-1 lg:-mx-4">
+
       {Array.from(Array(number), (e: number, i: number) => {
         return (
           <div
           key={i}
             role="status"
-            className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+            className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-300"
           >
             <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
               <svg
@@ -47,6 +49,7 @@ const LoadingScreen = () => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 };

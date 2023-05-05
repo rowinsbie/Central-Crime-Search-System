@@ -13,20 +13,20 @@ const Pagination = ({ total, pageSize, currentPage,category }: IPagination) => {
   const pageNumber = useSearchStore.getState().InterpolCurrentPage;
   if(total >= 1) {
       return (
-        <nav aria-label="Page navigation example">
+        <nav aria-label="Page navigation example xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-4 md:px-4">
       <ul className="inline-flex -space-x-px">
         <li>
-          <a href="#" onClick={() => changePage(currentPage-1,category)} className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+          <a href="#" onClick={() => changePage(currentPage-1,category)} className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100 hover:text-gray-700  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
         </li>
         {Array.from(Array(pageCount), (e:number, i:number) => {
             return (
               <li key={i}>
-          <a href="#" onClick={() => changePage(i+1,category)} className={"px-3 "+ (i+1 == pageNumber ? 'bg-red-500  pointer-events-none':'dark:bg-gray-800') +" py-2 leading-tight text-gray-500  border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700  dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}>{i+1}</a>
+          <a href="#" onClick={() => changePage(i+1,category)} className={"px-3 "+ (i+1 == pageNumber ? 'bg-blue-700 text-white pointer-events-none':'bg-white') +" py-2   border  hover:bg-gray-100 hover:text-blue-200  dark:hover:text-white"}>{i+1}</a>
         </li>
             )
         })}
         <li>
-          <a href="#" onClick={() => changePage(currentPage+1,category)} className={(pageNumber+1 == pageCount ? ' pointer-events-none':'') + "px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}>Next</a>
+          <a href="#" onClick={() => changePage(currentPage+1,category)} className={(pageNumber+1 == pageCount ? ' pointer-events-none':'') + "px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100 hover:text-gray-700  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}>Next</a>
         </li>
       </ul>
     </nav>
