@@ -9,7 +9,7 @@ const Interpol = () => {
   const total = useSearchStore((state) => state.totalResult);
   const currentPage = useSearchStore((state) => state.InterpolCurrentPage);
   const pageSize = 10;
-  if (result.length >= 1) {
+  if (total >= 1) {
     return (
       <>
         {result.map((result: any, index: any) => (
