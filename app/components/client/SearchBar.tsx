@@ -4,7 +4,7 @@ import { useState } from "react";
 import MatrixResult from "./result/MatrixResult";
 import useFilterStore from "@/state/FilterStore";
 
-import LoadingScreen from "./Loading.Screen";
+import LoadingScreen from "./LoadingScreen";
 import Interpol from "./result/InterpolResult";
 import FBIResult from "./result/FBIResult";
 const SearchBar = () => {

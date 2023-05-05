@@ -58,6 +58,7 @@ const useSearchStore = create<Search>()((set) => ({
     },
    
     changePage : async(page:number,category:String) => {
+        set({isLoading:true});
         let query =  useSearchStore.getState().query;
         switch(category) {
             case 'interpol':
@@ -75,6 +76,7 @@ const useSearchStore = create<Search>()((set) => ({
                 break;
 
         }
+        set({isLoading:false});
 
     }
 
@@ -83,7 +85,7 @@ const useSearchStore = create<Search>()((set) => ({
 
 const InterpolSearch = async(keyword:String,currentPage:number) => {
     // const res = await axios.get(`https://ws-public.interpol.int/notices/v1/red?name=${keyword}`)
-    const res = await axios.get(`https://ws-public.interpol.int/notices/v1/red?name=${keyword}&page=${currentPage}&resultPerPage=10`)
+    const res = await axios.get(`https://ws-public.interpol.int/notices/v1/red?name=${keyword}&page=${currentPage}&resultPerPage=8`)
     const data = await res.data;
     console.log(data);  
     return {
