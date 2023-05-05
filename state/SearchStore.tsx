@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import axios from "axios";
 import useFilterStore from './FilterStore';
+import FBIResult from '@/app/components/client/result/FBIResult';
 
 
 interface IInterpol  {
@@ -64,17 +65,16 @@ const useSearchStore = create<Search>()((set) => ({
         let query =  useSearchStore.getState().query;
         switch(category) {
             case 'interpol':
-                let interpol = useSearchStore.getState().InterpolCurrentPage;
-                let newPage = interpol;
-                if(interpol < page) {
-                    newPage = page;
-                } else {
-                    newPage = page;
-                }
-                let newResult = InterpolSearch(query,newPage);
-                set({InterpolCurrentPage:newPage});
+                let newResult = InterpolSearch(query,page);
+                set({InterpolCurrentPage:page});
                 set({results:(await newResult).results});
                 set({totalResult:(await newResult).totalResult});
+                break;
+            case 'FBI': 
+                let newFBIResult = FBISearch(query,page);
+                set({FBICurrentPage:page});
+                set({FbiResults:(await newFBIResult).items});
+                set({totalFBI:(await newFBIResult).total});
                 break;
 
         }

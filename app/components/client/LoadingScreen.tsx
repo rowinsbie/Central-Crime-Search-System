@@ -2,14 +2,14 @@ const LoadingScreen = () => {
   const number = 8;
   return (
     <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12  py-28 mx-auto px-4 md:px-4">
-                <div className="flex  flex-wrap  items-stretch -mx-1 lg:-mx-4">
+          <div className="flex  flex-wrap  items-stretch -mx-1 lg:-mx-4">
 
       {Array.from(Array(number), (e: number, i: number) => {
         return (
           <div
           key={i}
-            role="status"
-            className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-300"
+           
+            className="my-1 px-1  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3  h-full max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-300 bg-white"
           >
             <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
               <svg

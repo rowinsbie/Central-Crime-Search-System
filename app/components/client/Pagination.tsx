@@ -10,11 +10,14 @@ interface IPagination {
 const Pagination = ({ total, pageSize, currentPage,category }: IPagination) => {
   const pageCount = Math.ceil(total / pageSize);
   const changePage = useSearchStore((state) => state.changePage);
-  const pageNumber = useSearchStore.getState().InterpolCurrentPage;
+  let pageNumber = useSearchStore.getState().InterpolCurrentPage;
+  if(category == "FBI") {
+    pageNumber = useSearchStore.getState().FBICurrentPage;
+  }
   if(total >= 1) {
       return (
-        <nav aria-label="Page navigation example xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-4 md:px-4">
-      <ul className="inline-flex -space-x-px">
+        <nav aria-label="   xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-4 md:px-4 content">
+      <ul className="inline-flex -space-x-px  w-80">
         <li>
           <a href="#" onClick={() => changePage(currentPage-1,category)} className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100 hover:text-gray-700  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
         </li>
@@ -26,7 +29,7 @@ const Pagination = ({ total, pageSize, currentPage,category }: IPagination) => {
             )
         })}
         <li>
-          <a href="#" onClick={() => changePage(currentPage+1,category)} className={(pageNumber+1 == pageCount ? ' pointer-events-none':'') + "px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100 hover:text-gray-700  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}>Next</a>
+          <a href="#" onClick={() => changePage(currentPage+1,category)} className={(pageNumber+1 >= pageCount ? ' pointer-events-none':'') + "px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100 hover:text-gray-700  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}>Next</a>
         </li>
       </ul>
     </nav>

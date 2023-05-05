@@ -74,7 +74,7 @@ const Interpol = () => {
                       <Link
                         target="__blank"
                         href={`${key.id}`}
-                        className=" text-white px-7 rounded-full py-2 hover:bg-gray-900 bg-gray-950 mt-3"
+                        className=" text-white px-7 rounded-full py-2 hover:bg-gray-900 bg-blue-900  mt-3"
                       >
                         View details
                       </Link>
@@ -105,7 +105,7 @@ const Interpol = () => {
             src={InterpolLogo}
           />
         </div>
-        <p>No result from the Interpol</p>
+        <p className=" font-bold  text-2xl text-slate-700 ">No result from the Interpol</p>
       </div>
     );
   }

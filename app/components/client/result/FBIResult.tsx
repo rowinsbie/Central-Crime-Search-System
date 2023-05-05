@@ -3,9 +3,13 @@ import useSearchStore from "@/state/SearchStore";
 import Image from "next/image";
 import Link from "next/link";
 import FBILogo from "../../../images/fbi.png";
+import Pagination from "../Pagination";
 
 const FBIResult = () => {
   const fbi = useSearchStore((state) => state.FbiResults);
+  const total = useSearchStore((state) => state.totalFBI);
+  const currentPage = useSearchStore((state) => state.FBICurrentPage);
+  const pageSize = 10;
   if (fbi.length >= 1) {
     return (
       <>
@@ -20,7 +24,7 @@ const FBIResult = () => {
           <div className="flex  flex-wrap  items-stretch -mx-1 lg:-mx-4">
           {fbi.map((fbi: any, index: number) => (
             <div
-              key={fbi}
+              key={index}
               className="my-1 px-1  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3  h-full"
             >
               <article className="overflow-hidden rounded-lg shadow-lg">
@@ -68,15 +72,21 @@ const FBIResult = () => {
                   <Link
                     target="__blank"
                     href={`${fbi.id}`}
-                    className=" text-white px-7 rounded-full py-2 hover:bg-gray-900 bg-gray-950 mt-3"
+                    className=" text-white px-7 rounded-full py-2 hover:bg-gray-900 bg-blue-900  mt-3"
                   >
-                    View details
+                    View details  
                   </Link>
                 </footer>
               </article>
             </div>
           ))}
         </div>
+        <Pagination
+            total={total}
+            currentPage={currentPage}
+            pageSize={pageSize}
+            category="FBI"
+          />
         </div>
       </>
     );
@@ -94,7 +104,7 @@ const FBIResult = () => {
             src={FBILogo}
           />
       </div>
-      <p>No result from the FBI</p>
+      <p className="font-bold  text-2xl text-slate-700 ">No result from the FBI</p>
 
       </div>
     );

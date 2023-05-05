@@ -21,7 +21,7 @@ const SearchBar = () => {
   };
   return (
     <>
-      <div className="fixed mx-auto right-0 top-0 left-0  px-20  bg-slate-900 ">
+      <div className=" z-50 fixed mx-auto right-0 top-0 left-0  px-20  bg-gray-800 ">
         <div className="py-5">
           <AgencyLogos />
         </div>
@@ -60,7 +60,7 @@ const SearchBar = () => {
             <button
               onClick={(e) => setResult(keyword, e)}
               type="submit"
-              className="text-white absolute right-2.5 bottom-2.5 bg-slate-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 "
+              className="text-white absolute right-2.5 bottom-2.5 bg-gray-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 "
             >
               Search
             </button>

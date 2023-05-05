@@ -10,7 +10,7 @@ const MatrixResult = () => {
 
     return (
         <>
-            <div className="grid lg:grid-cols-5  px-5  bg-slate-700 py-3	text-white	 mb-10  ">
+            <div className="grid lg:grid-cols-5  px-5  bg-gray-600 py-3	text-white	 mb-10  ">
                 <div className="flex lg:justify-center sm:justify-start">
                     <span>Keyword: </span>
                     <b className="text-red-500">{query}</b>
