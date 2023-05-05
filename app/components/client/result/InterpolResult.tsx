@@ -12,44 +12,78 @@ const Interpol = () => {
   if (total >= 1) {
     return (
       <>
-        {result.map((result: any, index: any) => (
-          <div key={index} className="border px-10 p-10 w-full h-full ">
-            <div className="">
-              <Image
-                src={
-                  result._links.thumbnail ? result._links.thumbnail.href : ""
-                }
-                width={500}
-                height={100}
-                className="w-full h-48 object-cover"
-                alt="interpol logo"
-              />
-               <div className="mt-4">
-              <h1 className="">Name: <span className="lg:text-sm md:text-xs font-bold">{result.name}</span></h1>
-            </div>
-            </div>
+        <div
+          id="projects"
+          className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-4 md:px-4"
+        >
+          <h1 className=" text-4xl font-bold">Interpol</h1>
+          <p>Below are the people with red notice</p>
+          <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
-           
-            <hr />
-            <div className=" flex content-end   justify-between mt-20">
-              <Image
-                src={InterpolLogo}
-                alt="Interpol logo"
-                width={40}
-                height={40}
-              />
-              <button className="bg-blue-800 px-10 text-white hover:bg-blue-700 rounded-full">
-                Details
-              </button>
-            </div>
+          <div className="flex  flex-wrap  items-stretch -mx-1 lg:-mx-4">
+            {result.map((key: any, index: number) => {
+              return (
+                <div
+                  key={index}
+                  className="my-1 px-1  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3  h-full"
+                >
+                  <article className="overflow-hidden rounded-lg shadow-lg">
+                    <a href="#">
+                      <Image
+                        alt="Placeholder"
+                        className="block object-fit w-full   max-h-48 "
+                        src={
+                          key._links.thumbnail ? key._links.thumbnail.href : ""
+                        }
+                        width={1000}
+                        height={1000}
+                      />
+                    </a>
+
+                    <header className="items-center justify-between leading-tight p-2 md:p-4 ">
+                      <h1 className="text-lg">
+                        <a
+                          className="no-underline hover:underline text-black  text-md font-bold "
+                          href="#"
+                        >
+                          {key.name}
+                        </a>
+                      </h1>
+                      <p className="text-grey-darker text-sm"></p>
+                      <p className=" font-bold mt-3">Description</p>
+                      <div className=" overflow-hidden whitespace-nowrap text-ellipsis">
+                        <p>
+                          {key.description == null
+                            ? "No description"
+                            : key.description}
+                        </p>
+                        {/* <button className=" text-white px-7 rounded-full py-2 hover:bg-gray-900 bg-blue-700 mt-3">
+                      Read More
+                    </button> */}
+                      </div>
+                    </header>
+
+                    <footer className="flex items-center justify-between leading-none p-2 md:p-4">
+                      <Link
+                        target="__blank"
+                        href={`${key.id}`}
+                        className=" text-white px-7 rounded-full py-2 hover:bg-gray-900 bg-gray-950 mt-3"
+                      >
+                        View details
+                      </Link>
+                    </footer>
+                  </article>
+                </div>
+              );
+            })}
           </div>
-       
-        ))}
+        </div>
+            
         <Pagination
-            total={total}
-            currentPage={currentPage}
-            pageSize={pageSize}
-            category="interpol"
+          total={total}
+          currentPage={currentPage}
+          pageSize={pageSize}
+          category="interpol"
         />
       </>
     );
