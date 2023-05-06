@@ -2,7 +2,7 @@ import Image from "next/image";
 import SearchBar from "./components/client/SearchBar";
 import { Suspense } from "react";
 import Loading from "./loading";
-
+import Footer from "./components/client/Footer";
 export default function Home() {
   return (
     <main className="border-gray-200  px-5  py-19 pb-10  overflow-hidden">
@@ -17,6 +17,7 @@ search bar form. */}
         </div>
       </div>
       <hr className="" />
+      <Footer />
     </main>
   );
 }

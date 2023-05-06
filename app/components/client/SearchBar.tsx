@@ -8,6 +8,7 @@ import AgencyLogos from "../client/AgencyLogo";
 import LoadingScreen from "./LoadingScreen";
 import Interpol from "./result/InterpolResult";
 import FBIResult from "./result/FBIResult";
+import DefaultMessage from "./DefaultMessage";
 const SearchBar = () => {
   const [keyword, setKeyword] = useState("");
   const setResult = useSearchStore((state) => state.setResult);
@@ -78,7 +79,7 @@ const SearchBar = () => {
           {isLoading ? (
             <LoadingScreen />
           ) : (
-             (showInterpol ? <Interpol /> : showFBI ? <FBIResult /> : '')
+             (showInterpol ? <Interpol /> : showFBI ? <FBIResult /> : !showInterpol && !showFBI ?  <DefaultMessage /> : '')
             //  (showFBI ? <FBIResult /> : null)
           )}
       </div>
