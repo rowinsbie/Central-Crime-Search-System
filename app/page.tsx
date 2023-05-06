@@ -9,7 +9,6 @@ export default function Home() {
       <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md    mx-auto p-4">
       <div className="bg-white	">
 
-        <div className="px-10 pt-1 pb-10">
           {/* `<SearchBar />` is rendering the `SearchBar` component, which is a custom component that displays a
 search bar form. */}
           <Suspense fallback={<Loading />}>
@@ -18,7 +17,6 @@ search bar form. */}
         </div>
       </div>
       <hr className="" />
-      </div>
     </main>
   );
 }
