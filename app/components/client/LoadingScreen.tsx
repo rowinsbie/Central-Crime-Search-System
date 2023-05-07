@@ -1,7 +1,7 @@
 const LoadingScreen = () => {
   const number = 8;
   return (
-    <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12  py-28 mx-auto px-4 md:px-4">
+    <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12  md:py-28 py-3 mx-auto px-4 md:px-4">
           <div className="flex  flex-wrap  items-stretch -mx-1 lg:-mx-4">
 
       {Array.from(Array(number), (e: number, i: number) => {

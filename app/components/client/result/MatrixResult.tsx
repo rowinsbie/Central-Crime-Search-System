@@ -9,7 +9,7 @@ const MatrixResult = () => {
   const updateFilter = useFilterStore((state) => state.updateFilter);
 
   return (
-    <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md  py-5 text-white bg-slate-600 px-10 mx-auto ">
+    <div className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md md:py-5  py-2 text-white bg-slate-600 px-10 mx-auto ">
       <div className="flex flex-cols justify-between text-sm md:text-lg">
         {/* <div className="">
           <span>Keyword: </span>
