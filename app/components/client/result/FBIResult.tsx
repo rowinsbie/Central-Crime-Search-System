@@ -15,7 +15,7 @@ const FBIResult = () => {
       <>
         <div
           
-          className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-4 md:px-4"
+          className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-1 md:px-1"
         >
           <h1 className=" text-4xl font-bold ">FBI</h1>
           <p>Below are the people wanted by the FBI</p>

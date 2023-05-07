@@ -22,7 +22,7 @@ const SearchBar = () => {
   };
   return (
     <>
-      <div className=" z-50 fixed mx-auto right-0 top-0 left-0  px-20  bg-gray-800 ">
+      <div className=" fixed mx-auto right-0 top-0 left-0  px-3  bg-gray-800 ">
         <div className="py-5">
           <AgencyLogos />
         </div>

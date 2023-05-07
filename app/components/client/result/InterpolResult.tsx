@@ -14,7 +14,7 @@ const Interpol = () => {
       <>
         <div
           id="projects"
-          className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-4 md:px-4"
+          className="xl:max-w-screen-xl sm:max-w-screen-sm md:max-w-screen-md container my-12 mx-auto px-1 md:px-4"
         >
           <h1 className=" text-4xl font-bold">Interpol</h1>
           <p>Below are the people with red notice</p>
